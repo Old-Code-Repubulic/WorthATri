@@ -5,7 +5,6 @@ version: '3.7'
 services:
 
     db:
-        build: .
         image: postgres:13
         ports:
             - "5432:5432"
@@ -17,7 +16,6 @@ services:
             - POSTGRES_DB=joplin_db_1
 
     app:
-        build: .
         image: joplin/server:latest
         depends_on: 
             - db
