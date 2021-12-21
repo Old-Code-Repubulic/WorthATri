@@ -14,6 +14,9 @@ services:
              - DB_CLIENT=pg
              - POSTGRES_DB=joplin_db_1
              - POSTGRES_HOST_AUTH_METHOD=trust
+        extra_hosts:
+            - "host.docker.internal:host.docker.internal"
+
     app:
         image: joplin/server:latest
         depends_on: 
@@ -25,3 +28,5 @@ services:
             - POSTGRES_DATABASE=joplin_db_1
             - POSTGRES_PORT=5432
             - POSTGRES_HOST=host.docker.internal
+        extra_hosts:
+            - "host.docker.internal:host.docker.internal"
