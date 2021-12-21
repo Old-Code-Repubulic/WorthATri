@@ -24,6 +24,8 @@ ports:
     onOpen: open-preview
   - port: 8800
     onOpen: open-preview  
+  - port: 587
+    onOpen: ignore
 vscode:
   extensions:
     - ms-azuretools.vscode-docker

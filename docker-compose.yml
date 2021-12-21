@@ -11,6 +11,7 @@ services:
         volumes: 
             - ./data/postgres:/var/lib/postgresql/data
         environment:
+            - POSTGRES_USER=betterDB
             - POSTGRES_DB=joplin_db_1
 
     app:
@@ -24,3 +25,4 @@ services:
             - POSTGRES_DATABASE=joplin_db_1
             - POSTGRES_PORT=5432
             - POSTGRES_HOST=localhost
+            - POSTGRES_USER=worthATry
