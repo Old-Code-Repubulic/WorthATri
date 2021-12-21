@@ -22,7 +22,7 @@ ports:
     onOpen: open-preview
   - port: 5432
     onOpen: open-preview
-  - port: 22300
+  - port: 8800
     onOpen: open-preview  
 vscode:
   extensions:
