@@ -12,8 +12,8 @@ services:
             - ./data/postgres:/var/lib/postgresql/data
         environment:
              - DB_CLIENT=pg
-            - POSTGRES_DB=joplin_db_1
-            - POSTGRES_HOST_AUTH_METHOD=trust
+             - POSTGRES_DB=joplin_db_1
+             - POSTGRES_HOST_AUTH_METHOD=trust
     app:
         image: joplin/server:latest
         depends_on: 
