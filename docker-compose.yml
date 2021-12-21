@@ -20,7 +20,7 @@ services:
         depends_on: 
             - db
         ports:
-            - "22300:22300"
+            - "8808:8808"
         environment:
             - DB_CLIENT=pg
             - POSTGRES_PASSWORD=worthATry
