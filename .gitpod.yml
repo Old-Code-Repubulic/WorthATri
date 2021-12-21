@@ -5,23 +5,25 @@ tasks:
       docker-compose up
 
 
-      ports:
-  # - port: 5000
-  #   onOpen: ignore
-  # - port: 5601
-  #   onOpen: open-browser
-  # - port: 9200
-  #   onOpen: open-preview
-  # - port: 9300
-  #   onOpen: ignore
-  # - port: 9600
-  #   onOpen: ignore
-  # - port: 5044
-  #   onOpen: open-preview
-  - port: 5432
+ports:
+  - port: 5000
     onOpen: ignore
-  - port: 22300
+  - port: 5601
+    onOpen: open-browser
+  - port: 9200
     onOpen: open-preview
+  - port: 9300
+    onOpen: ignore
+  - port: 9600
+    onOpen: ignore
+  - port: 5044
+    onOpen: open-preview
+  - port: 8080
+    onOpen: open-preview
+  - port: 5432
+    onOpen: open-preview
+  - port: 22300
+    onOpen: open-preview  
 vscode:
   extensions:
     - ms-azuretools.vscode-docker
