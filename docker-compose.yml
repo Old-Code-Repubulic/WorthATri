@@ -5,6 +5,7 @@ version: '3.7'
 services:
 
     db:
+        build: .
         image: postgres:13
         ports:
             - "5432:5432"
@@ -16,6 +17,7 @@ services:
             - POSTGRES_DB=joplin_db_1
 
     app:
+        build: .
         image: joplin/server:latest
         depends_on: 
             - db
@@ -26,6 +28,6 @@ services:
             - DB_CLIENT=pg
             - POSTGRES_PASSWORD=worthATry
             - POSTGRES_DATABASE=joplin_db_1
-            - POSTGRES_USER=worthATryy
+            - POSTGRES_USER=worthATry
             - POSTGRES_PORT=5432
             - POSTGRES_HOST=localhost
