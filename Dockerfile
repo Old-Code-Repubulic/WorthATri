@@ -13,10 +13,6 @@ RUN echo '#!/bin/bash\npg_ctl -D ~/pg/data/ -l ~/pg/logs/log -o "-k ~/pg/sockets
 RUN chmod +x ~/pg/scripts/*
 ENV PATH="$HOME/pg/scripts:$PATH"
 
-# Set some environment variables
-ENV POSTGRES_PASSWORD=worthATry
-ENV POSTGRES_USER=worthATry
-ENV POSTGRES_DB=joplin_db_1
 
 
 # Give back control
