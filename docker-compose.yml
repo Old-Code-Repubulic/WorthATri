@@ -4,26 +4,28 @@ version: '3.7'
 
 services:
 
+    db:
+        image: postgres:13
+        ports:
+            - "5432:5432"
+        volumes: 
+            - ./data/postgres:/var/lib/postgresql/data
+        environment:
+            - POSTGRES_PASSWORD=worthATry
+            - POSTGRES_USER=worthATry
+            - POSTGRES_DB=joplin_db_1
+
     app:
-        image: joplin/server:latest
+        image: joetamobourine/joplin:firstUpload
         depends_on: 
             - db
         ports:
-            - "8808:8808"
+            - "22300:22300"
+        restart: unless-stopped
         environment:
             - DB_CLIENT=pg
+            - POSTGRES_PASSWORD=worthATry
             - POSTGRES_DATABASE=joplin_db_1
+            - POSTGRES_USER=worthATry
             - POSTGRES_PORT=5432
-            - POSTGRES_HOST=host.docker.internal
-
-
-    db:
-        image:
-            file: "Dockerfile"
-        ports: 
-            - "5432"
-        environment:
-            - POSTGRES_DATABASE=joplin_db_1
-            - POSTGRES_PORT=5432
-            - POSTGRES_HOST=host.docker.internal
-          
+            - POSTGRES_HOST=localhost
