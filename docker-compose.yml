@@ -15,14 +15,13 @@ services:
             - POSTGRES_DATABASE=joplin_db_1
             - POSTGRES_PORT=5432
             - POSTGRES_HOST=host.docker.internal
-        extra_hosts:
-            - "host.docker.internal:host.docker.internal"
+
 
     db:
         image:
-            file: Dockerfile
+            file: "Dockerfile"
         ports: 
-            - port: 5432
+            - "5432"
         environment:
             - POSTGRES_DATABASE=joplin_db_1
             - POSTGRES_PORT=5432
