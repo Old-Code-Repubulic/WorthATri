@@ -1,6 +1,4 @@
-tasks:
-  - command: |
-      docker-compose up
+
 
 
 ports:
