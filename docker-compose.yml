@@ -14,7 +14,8 @@ services:
 
 
     app:
-        image:
+        build: .
+        image: joetamobourine/joplin:firstUpload
         file: docker/Dockerfile
         depends_on: 
             - db
