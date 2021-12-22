@@ -13,12 +13,14 @@ services:
             - POSTGRES_USER=worthATry
             - POSTGRES_DB=joplin_db_1
 
+
     app:
         image: joetamobourine/joplin:firstUpload
         depends_on: 
             - db
         ports:
             - "22300:22300"
+ 
         restart: unless-stopped
         environment:
             - DB_CLIENT=pg
@@ -27,3 +29,5 @@ services:
             - POSTGRES_USER=worthATry
             - POSTGRES_PORT=5432
             - POSTGRES_HOST=localhost
+        extra_hosts:
+        - "host.docker.internal:172.18.0.1"
