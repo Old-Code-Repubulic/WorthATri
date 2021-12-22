@@ -4,19 +4,6 @@ version: '3.7'
 
 services:
 
-    db:
-        image: postgres:13
-        ports:
-            - "5432:5432"
-        volumes: 
-            - ./data/postgres:/var/lib/postgresql/data
-        environment:
-             - DB_CLIENT=pg
-             - POSTGRES_DB=joplin_db_1
-             - POSTGRES_HOST_AUTH_METHOD=trust
-        extra_hosts:
-            - "host.docker.internal:host.docker.internal"
-
     app:
         image: joplin/server:latest
         depends_on: 
@@ -30,3 +17,14 @@ services:
             - POSTGRES_HOST=host.docker.internal
         extra_hosts:
             - "host.docker.internal:host.docker.internal"
+
+    db:
+        image:
+            file: Dockerfile
+        ports: 
+            - port: 5432
+        environment:
+            - POSTGRES_DATABASE=joplin_db_1
+            - POSTGRES_PORT=5432
+            - POSTGRES_HOST=host.docker.internal
+          
