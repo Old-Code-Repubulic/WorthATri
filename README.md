@@ -15,6 +15,13 @@ WorthATri will be an app that I synchronise with the note taking software Joplin
         <li>Once running, I set my Joplin Desktop app to synchronise with my containerized Joplin server and postgres database:</li>
                     <img src="images\joplin-server setup.PNG" alt="joplin synch configuration with localhost target"/>
     </ol>
+    
+01/11/2022
+    <ol>
+    <li>Have decided to not use gitpod as the virtual desktop</li>
+    <li>Too many issues have arisen, although I was able to get the containers running in gitpod. There are issues with the file structure inside of gitpod using the "gitpod" user and expposing the needed ports</li>
+    <li>for this being a group project, the code debt for gitpod was too great and caused lack of actualy development</li>
+    <li>New goal for project is to download containers from my docker repository and use the images locally with visual studio. This is an easy solution for allowing localhost previewing</li>
 
 Next Step: Create crud functionality so that I can better organize what I have done on the app. Possibly a little drag and drop action? I'm thinking that the user can create buckets, then tasks that are synched all show up on the same page, and you can drag and drop the task in the appropriate bucket (makes it fun, and very satisfying)
 
